@@ -325,7 +325,35 @@
 
   .portfolio-banner .emoji{font-size:2.5rem;margin-top:1rem;display:block}
 
+  /* ─── TESTIMONIAL ─── */
+  .testimonial{background:var(--bg)}
 
+  .testimonial-card{
+    max-width:700px;margin:0 auto;
+    text-align:center;
+    padding:3rem;
+  }
+
+  .testimonial-card .quote-mark{
+    font-size:4rem;line-height:1;
+    background:var(--gradient);
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+    font-family:'Playfair Display',serif;
+    display:block;margin-bottom:1rem;
+  }
+
+  .testimonial-card blockquote{
+    font-family:'Playfair Display',serif;
+    font-size:1.6rem;font-weight:500;
+    font-style:italic;
+    line-height:1.5;
+    margin-bottom:2rem;
+  }
+
+  .testimonial-author{display:flex;flex-direction:column;align-items:center;gap:.25rem}
+
+  .testimonial-author .name{font-weight:600;font-size:1rem}
+  .testimonial-author .role{color:var(--text-dim);font-size:.85rem}
 
   /* ─── FOOTER ─── */
   footer{
@@ -415,9 +443,8 @@
   <ul class="nav-links">
     <li><a href="#features">About</a></li>
     <li><a href="#portfolio">Apps</a></li>
-
   </ul>
-  <a href="/cdn-cgi/l/email-protection#c3b7a6a2ae83b5aab1a2afa2b3b3b0eda7a6b5" class="nav-cta">Contact Us</a>
+  <a href="mailto:team@viralapps.dev" class="nav-cta">Contact Us</a>
 </nav>
 
 <!-- ─── HERO ─── -->
@@ -493,7 +520,6 @@
 </section>
 
 
-
 <!-- ─── FOOTER ─── -->
 <footer>
   <div class="footer-inner">
@@ -514,30 +540,23 @@
       <ul>
         <li><a href="#">Privacy Policy</a></li>
         <li><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms &amp; Conditions</a></li>
-        <li><a href="/cdn-cgi/l/email-protection#5b2f3e3a361b2d32293a373a2b2b28753f3e2d">Contact Us</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Social</h4>
-      <ul>
-        <li><a href="#">Facebook</a></li>
-        <li><a href="#">Instagram</a></li>
-        <li><a href="#">Twitter / X</a></li>
+        <li><a href="mailto:team@viralapps.dev">Contact Us</a></li>
       </ul>
     </div>
   </div>
 
   <div class="footer-bottom">
     <span>&copy; 2026 ViralApps. All rights reserved.</span>
-    <div class="footer-social">
-      <a href="#" title="Facebook">f</a>
-      <a href="#" title="Instagram">ig</a>
-      <a href="#" title="X">𝕏</a>
-    </div>
   </div>
 </footer>
 
 <!-- ─── SCROLL REVEAL ─── -->
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.cl
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
